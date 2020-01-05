@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 app.config['SECRET_KEY'] = 'sdaw'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    os.path.join(BASE_DIR, 'aryandb.db')
+    os.path.join(BASE_DIR, 'CAVC_Project.db')
 db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)
