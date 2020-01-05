@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>استارت لی | قالب استارت آپ</title>
+    <!-- Meta Share -->
+    <meta property="og:title" content="Start.ly — Agency One Page Parallax Template" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ url_for('static',filename= 'landing_page/images/screen.jpg') }}" />
+    <!-- CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Product+Sans:300,400,700" rel="stylesheet">
+    <!-- build:css css/app.min.css -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'landing_page/css/global/bootstrap.min.css') }}">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'landing_page/css/global/plugins/icon-font.css') }}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'landing_page/css/style.css') }}">
+    <!-- /build -->
+</head>
+
+<body class="overflow-hidden">
+    <header id="home">
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{{url_for('index_Blueprint.index')}}">
+                    <h3 class="gradient-mask">اندروید ورژن کنترل api</h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav"
+                    aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="site-nav">
+                    <ul class="navbar-nav text-sm-left ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">ویژگی ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">تعرفه ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">وبلاگ</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown">ردگلوری</a>
+                        </li>
+                        {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                                <a class="btn align-middle btn-outline-primary my-2 my-lg-0" href="{{url_for('package_Blueprint.dashboard_view')}}">داشبورد</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn align-middle btn-outline-primary my-2 my-lg-0" href="{{ url_for('users.logout_view') }}">خروج</a>
+                            </li>
+                        {% else %}
+                        <li class="nav-item text-center">
+                            <a href="{{ url_for('users.login_view') }}" class="btn align-middle btn-outline-primary my-2 my-lg-0">ورود</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="{{ url_for('users.register_view') }}" class="btn align-middle btn-primary my-2 my-lg-0">ثبت نام</a>
+                        </li>
+                        {% endif %}
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- // end navbar -->
+
+
+        <!-- hero -->
+        <section class="jumbotron-two">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5">
+
+                        <h1 class="display-5">یک استارت آپ فوق العاده ...</h1>
+                        <p class="text-muted mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+                            است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می
+                            باشد. </p>
+                        <p>
+                            <a href="#signup" class="btn btn-xl btn-primary">از api ما استفاده کنید !</a>
+                        </p>
+
+                    </div>
+                    <div class="col-12 col-md-7 my-3 my-md-lg">
+
+                        <div class="youtube cast-shadow" data-video-id="rm5sdAYCqqc"
+                            data-params="modestbranding=1&amp;showinfo=0&amp;controls=1&amp;vq=hd720">
+                            <img src="{{ url_for('static',filename= 'landing_page/images/screen2.jpg') }}" alt="image" class="img-fluid">
+                            <div class="play"><span class="pe-7s-play pe-3x"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- // end hero -->
+
+
+        <div class="bg-shape"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle-two"></div>
+
+    </header>
+    <div class="section" id="intro">
+        <div class="container">
+
+            <div class="client-logos text-center">
+                <p class="text-muted">تایید شده توسط بهترین برند های این حوزه</p>
+
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_1.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_2.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_3.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_4.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_5.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_6.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_7.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_8.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_9.png') }}" alt="client logo" />
+                <img src="{{ url_for('static',filename= 'landing_page/images/client_logo_10.png') }}" alt="client logo" />
+
+            </div>
+            <!-- // end .client-logos -->
+
+        </div>
+        <!-- // end .container -->
+    </div>
+    <!-- // end #services.section -->
+    <div class="section bg-light pt-lg">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="media mb-5">
+                        <div class="media-icon d-flex mr-3"> <i class="pe-7s-paint-bucket pe-3x"></i> </div>
+                        <!-- // end .di -->
+                        <div class="media-body">
+                            <h5 class="mt-0">انعطاف پذیر</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                            و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media mb-5">
+                        <div class="media-icon d-flex mr-3"> <i class="pe-7s-rocket pe-3x"></i> </div>
+                        <!-- // end .di -->
+                        <div class="media-body">
+                            <h5 class="mt-0">فـوق سـریع</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                            با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media mb-5">
+                        <div class="media-icon d-flex mr-3"> <i class="pe-7s-piggy pe-3x"></i> </div>
+                        <!-- // end .di -->
+                        <div class="media-body">
+                            <h5 class="mt-0">محصولی به صرفه</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media mb-5">
+                        <div class="media-icon d-flex mr-3"> <i class="pe-7s-cloud-upload pe-3x"></i> </div>
+                        <!-- // end .di -->
+                        <div class="media-body">
+                            <h5 class="mt-0">سبک و کم حجم</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                            و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media mb-5">
+                        <div class="media-icon d-flex mr-3"> <i class="pe-7s-science pe-3x"></i> </div>
+                        <!-- // end .di -->
+                        <div class="media-body">
+                            <h5 class="mt-0">بروزترین تکنولوژی</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                            صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media mb-5">
+                        <div class="media-icon d-flex mr-3"> <i class="pe-7s-like2 pe-3x"></i> </div>
+                        <!-- // end .di -->
+                        <div class="media-body">
+                            <h5 class="mt-0">100% اورجینال</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <!-- // end .col -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="section" id="features">
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-8">
+                    <div class="browser-window limit-height my-5 mr-0 mr-sm-5">
+                        <div class="top-bar">
+                            <div class="circles">
+                                <div class="circle circle-red"></div>
+                                <div class="circle circle-yellow"></div>
+                                <div class="circle circle-blue"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="{{ url_for('static',filename= 'landing_page/images/dashboard.png') }}" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="media-icon mb-3"> <i class="pe-7s-like2 pe-3x"></i> </div>
+                            <h3 class="mt-0">پنل کاربری ما عالی است!</h3>
+                            <p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+                                است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                گرافیک است.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="row align-items-center mt-5">
+
+                <div class="col-sm-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="media-icon mb-3"> <i class="pe-7s-graph1 pe-3x"></i> </div>
+                            <h3 class="mt-0">اندروید api ما فوق العاده است !</h3>
+                            <p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+                                است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                گرافیک است.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-8">
+                    <img src="{{ url_for('static',filename= 'landing_page/images/screen.jpg') }}" alt="image" class="img-fluid cast-shadow my-5">
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- features -->
+
+
+    <div class="section bg-light py-lg">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="media">
+
+                        <!-- // end .di -->
+                        <div class="media-body text-center">
+                            <div class="color-icon mb-3"> <i class="pe-7s-medal pe-3x"></i> </div>
+                            <h5 class="mt-0">طراحی وب و سئوی ردگلوری</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                            از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media">
+                        <!-- // end .di -->
+                        <div class="media-body text-center">
+                            <div class="color-icon mb-3"> <i class="pe-7s-diamond pe-3x"></i> </div>
+                            <h5 class="mt-0">طراحی وب و سئوی ردگلوری</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                            از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="media">
+                        <!-- // end .di -->
+                        <div class="media-body text-center">
+                            <div class="color-icon mb-3"> <i class="pe-7s-cloud-upload pe-3x"></i> </div>
+                            <h5 class="mt-0">طراحی وب و سئوی ردگلوری</h5> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                            از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- // end features -->
+
+
+
+    <!-- Testimonials -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>مشتریان ردگلوری در دنیا بهترین هستند!</h3>
+                <p>کافی است یک بار از api ما برای کنترل ورژن نرم افزار خود استفاده کنید و به راحتی و تمیزی کار پی ببرید</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="embed-tweet-item">
+                        <blockquote class="twitter-tweet" data-cards="hidden" lang="en" data-width="550"
+                            data-link-color="#7642FF" data-align="center">
+                            <a href="https://twitter.com/kmin/status/943914224329347072"></a>
+                        </blockquote>
+                    </div>
+                    <!-- end .embed-tweet-item -->
+                </div>
+                <!-- end .col -->
+                <div class="col-md-4">
+                    <div class="embed-tweet-item">
+                        <blockquote class="twitter-tweet" data-cards="hidden" lang="en" data-width="550"
+                            data-link-color="#7642FF" data-align="center">
+                            <a href="https://twitter.com/halarewich/status/954224121784688640"></a>
+                        </blockquote>
+                    </div>
+                    <!-- end .embed-tweet-item -->
+                </div>
+                <!-- end .col -->
+                <div class="col-md-4">
+                    <div class="embed-tweet-item">
+                        <blockquote class="twitter-tweet" data-cards="hidden" lang="en" data-width="550"
+                            data-link-color="#7642FF" data-align="center">
+                            <a href="https://twitter.com/scottbelsky/status/921417663859052544"></a>
+                        </blockquote>
+                    </div>
+                    <!-- end .embed-tweet-item -->
+                </div>
+                <!-- end .col -->
+            </div>
+            <!-- end .row -->
+
+
+        </div>
+    </div>
+    <!-- // end Testimonials -->
+
+
+
+
+    <!-- Pricing -->
+    <div class="section bg-light py-lg" id="pricing">
+        <div class="container">
+
+            <div class="section-title text-center mt-0 mb-5">
+                <h3>پلان خود را انتخاب کنید</h3>
+                <p>بهترین محصولات با مناسب ترین قیمت از ردگلوری خریداری کنید ...</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card pricing">
+                        <div class="card-body">
+                            <small class="text-muted">پلان پایه</small>
+                            <h5 class="card-title">19 دلار</h5>
+                            <p class="card-text">
+                                <ul class="list-unstyled" align="right">
+                                    <li>فضای میزبانی : نامحدود</li>
+                                    <li class="plan-muted">پهنای باند : نامحدود</li>
+                                    <li class="plan-muted">قالب های رایگان : نامحدود</li>
+                                    <li>پشتیبانی مادام العمر</li>
+                                </ul>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing">
+                        <div class="card-body">
+                            <small class="text-muted">پلان نقره ای</small>
+                            <h5 class="card-title">29 دلار</h5>
+                            <p class="card-text">
+                                <ul class="list-unstyled" align="right">
+                                    <li>فضای میزبانی : نامحدود</li>
+                                    <li>هنای باند : نامحدود</li>
+                                    <li>قالب های رایگان : نامحدود</li>
+                                    <li>پشتیبانی مادام العمر</li>
+                                </ul>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing">
+                        <div class="card-body">
+                            <small class="text-muted">پلان الماس</small>
+                            <h5 class="card-title">59 دلار</h5>
+                            <p class="card-text">
+                                <ul class="list-unstyled" align="right">
+                                    <li>فضای میزبانی : نامحدود</li>
+                                    <li>هنای باند : نامحدود</li>
+                                    <li>قالب های رایگان : نامحدود</li>
+                                    <li>پشتیبانی مادام العمر</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- // end Pricing -->
+
+    <!-- Signup -->
+    <div class="section" id="signup">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>دوره رایگان خود را از امروز آغاز کنید!</h3>
+                <p>تنها در کمتر از 3 دقیقه وب سایت مورد علاقه خود را بسازید!</p>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col col-md-5">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="نام شما">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="ایمیل شما">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="رمز عبور">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-xl btn-block btn-primary">تا 14 روز اول رایگان
+                                است!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="section bg-light mt-4" id="footer">
+        <div class="container">
+            <div class="row">
+                <!-- // end .col-sm-3 -->
+                <div class="col-sm-2">
+                    <ul class="list-unstyled footer-links ml-1">
+                        <li><a href="#portfolio">نمونه کار</a></li>
+                        <li><a href="#about">درباره ما</a></li>
+                        <li><a href="#services">خدمات ما</a></li>
+                        <li><a href="#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <!-- // end .col-sm-3 -->
+                <div class="col-sm-2">
+                    <ul class="list-unstyled footer-links ml-1">
+                        <li><a href="#">شرایط استفاده</a></li>
+                        <li><a href="#about">حریم خصوصی</a></li>
+                    </ul>
+                </div>
+                <!-- // end .col-sm-3 -->
+                <div class="col-sm-2">
+                    <ul class="list-unstyled footer-links ml-1">
+                        <li><a href="#">فیسبوک</a></li>
+                        <li><a href="#">توئیتر</a></li>
+                        <li><a href="#">لینکداین</a></li>
+                    </ul>
+                </div>
+                <!-- // end .col-sm-3 -->
+                <div class="col-sm-2">
+                    <a href="#home" class="btn btn-sm btn-outline-primary ml-1">بازگشت به بالا</a>
+                </div>
+                <!-- // end .col-sm-3 -->
+            </div>
+            <!-- // end .row -->
+            <div class=" text-center mt-4"> <small class="text-muted">کپی رایت ©
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script>
+                    تمامی حقوق برای ما محفوظ است.
+                </small></div>
+        </div>
+        <!-- // end .container -->
+    </div>
+    <!-- // end #about.section -->
+    <!-- // end .agency -->
+    <!-- JS Files -->
+    <!-- build:js js/app.min.js -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="{{ url_for('static',filename= 'landing_page/js/global/jquery-3.2.1.min.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static',filename= 'landing_page/js/global/bootstrap.bundle.min.js') }}"></script>
+    <!-- Main JS -->
+    <script src="{{ url_for('static',filename= 'landing_page/js/script.js') }}"></script>
+    <!-- /build -->
+</body>
+
+</html>

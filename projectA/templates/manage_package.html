@@ -1,0 +1,62 @@
+{% extends "base_user_dashboard.html" %}
+
+{% block mainBody %}
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>package_name</th>
+                        <th>package_hash</th>
+                        <th>current_version</th>
+                        <th>force_version</th>
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>package_name</th>
+                        <th>package_hash</th>
+                        <th>current_version</th>
+                        <th>force_version</th>
+
+                    </tr>
+                </tfoot>
+                <tbody>
+                {% for package in user_packages %}
+                    <tr>
+                        <td><a href="{{url_for('package_Blueprint.edit_package' , package_hash_url = package.package_hash )}}">{{package.package_name}}</a></td>
+                        <td><a href="{{url_for('package_Blueprint.package_hash_get' , package_hash_url = package.package_hash )}}">{{package.package_hash}}</a></td>
+                        <td>{{package.current_version}}</td>
+                        <td>{{package.force_version}}</td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock mainBody %}
+
+
+{% block topstyle %}
+<!-- Custom styles for this page -->
+<link href="{{url_for('static',filename='dashboard/vendor/datatables/dataTables.bootstrap4.min.css')}}"
+    rel="stylesheet">
+{% endblock topstyle %}
+
+{% block endstyle %}
+<!-- Page level plugins -->
+<script src="{{url_for('static',filename='dashboard/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static',filename='dashboard/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{url_for('static',filename='dashboard/js/demo/datatables-demo.js')}}"></script>
+{% endblock endstyle %}
