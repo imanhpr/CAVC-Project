@@ -15,16 +15,20 @@ def package_view():
     form = Package_form()
     md5()
     if form.validate_on_submit():
-        package_hash_var = f'{current_user.username} - {form.package_name.data}'
-        new_package = Package(
+        try:
+            package_hash_var = f'{current_user.email} - {form.package_name.data}'
+            new_package = Package(
             package_name=form.package_name.data,
             package_hash=md5(package_hash_var.encode("utf-8")).hexdigest(),
             current_version=form.c_version.data,
             force_version=form.f_version.data,
             username_id=current_user.id,
-        )
-        db.session.add(new_package)
-        db.session.commit()
+            )
+            db.session.add(new_package)
+            db.session.commit()
+        except:
+            flash('this name already taken !',category='danger')
+            return redirect(url_for('package_Blueprint.package_view'))
         flash('New Package Created !',category='success')
         return redirect(url_for('package_Blueprint.manage_package_view'))
     return render_template('package.html', form=form)

@@ -42,15 +42,9 @@
                             <a class="nav-link" href="#features">ویژگی ها</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pricing">تعرفه ها</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#">وبلاگ</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" data-toggle="dropdown">ردگلوری</a>
-                        </li>
                         {% if current_user.is_authenticated %}
                         <li class="nav-item">
                                 <a class="btn align-middle btn-outline-primary my-2 my-lg-0" href="{{url_for('package_Blueprint.dashboard_view')}}">داشبورد</a>
@@ -367,74 +361,6 @@
     <!-- // end Testimonials -->
 
 
-
-
-    <!-- Pricing -->
-    <div class="section bg-light py-lg" id="pricing">
-        <div class="container">
-
-            <div class="section-title text-center mt-0 mb-5">
-                <h3>پلان خود را انتخاب کنید</h3>
-                <p>بهترین محصولات با مناسب ترین قیمت از ردگلوری خریداری کنید ...</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card pricing">
-                        <div class="card-body">
-                            <small class="text-muted">پلان پایه</small>
-                            <h5 class="card-title">19 دلار</h5>
-                            <p class="card-text">
-                                <ul class="list-unstyled" align="right">
-                                    <li>فضای میزبانی : نامحدود</li>
-                                    <li class="plan-muted">پهنای باند : نامحدود</li>
-                                    <li class="plan-muted">قالب های رایگان : نامحدود</li>
-                                    <li>پشتیبانی مادام العمر</li>
-                                </ul>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card pricing">
-                        <div class="card-body">
-                            <small class="text-muted">پلان نقره ای</small>
-                            <h5 class="card-title">29 دلار</h5>
-                            <p class="card-text">
-                                <ul class="list-unstyled" align="right">
-                                    <li>فضای میزبانی : نامحدود</li>
-                                    <li>هنای باند : نامحدود</li>
-                                    <li>قالب های رایگان : نامحدود</li>
-                                    <li>پشتیبانی مادام العمر</li>
-                                </ul>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card pricing">
-                        <div class="card-body">
-                            <small class="text-muted">پلان الماس</small>
-                            <h5 class="card-title">59 دلار</h5>
-                            <p class="card-text">
-                                <ul class="list-unstyled" align="right">
-                                    <li>فضای میزبانی : نامحدود</li>
-                                    <li>هنای باند : نامحدود</li>
-                                    <li>قالب های رایگان : نامحدود</li>
-                                    <li>پشتیبانی مادام العمر</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- // end Pricing -->
 
     <!-- Signup -->
     <div class="section" id="signup">

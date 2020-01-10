@@ -133,3 +133,5 @@ dmypy.json
 migrations
 4534_siena-1
 *.db
+
+.vscode
