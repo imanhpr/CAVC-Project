@@ -81,7 +81,7 @@ def package_hash_get(package_hash_url):
 @package_Blueprint.route('/dashboard')
 @login_required
 def dashboard_view():
-   return render_template('base_user_dashboard.html')
+   return render_template('main_dashboard.html')
 
 
 @package_Blueprint.route('/managepackage')
