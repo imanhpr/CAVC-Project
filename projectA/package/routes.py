@@ -5,10 +5,12 @@ from hashlib import md5
 from projectA.models import Package 
 from projectA import db
 
+# ثبت بلوپرینت مربوط به بخش پکیج ها برای نظم بیشتر
 package_Blueprint = Blueprint('package_Blueprint',__name__)
 
 
-
+#صفحه اصلی مربوط به پکیج ها
+# و ثبت پکیج حدید در دیتابیس و اختصاص دادن هش اختصاصی به پکیج
 @package_Blueprint.route('/package', methods=['POST', 'GET'])
 @login_required
 def package_view():
@@ -33,7 +35,7 @@ def package_view():
         return redirect(url_for('package_Blueprint.manage_package_view'))
     return render_template('package.html', form=form)
 
-
+# درخواست ریکوست گت برای پکیج مربوطه با استفاده از هش آن و برسی ورژن کلاینت
 @package_Blueprint.route('/package/<path:package_hash_url>')
 def package_hash_get(package_hash_url):
     try:
@@ -77,19 +79,20 @@ def package_hash_get(package_hash_url):
             return jsonify(error='arg not found !')
     
 
-
+# داشبورد اصلی کاربر ثبت نام شده
 @package_Blueprint.route('/dashboard')
 @login_required
 def dashboard_view():
    return render_template('main_dashboard.html')
 
-
+# مدیریت پکیج های ثبت شده توسط کاربر در وب سایت
 @package_Blueprint.route('/managepackage')
 @login_required
 def manage_package_view():
     user_packages = Package.query.filter_by(username_id=current_user.id).all()
     return render_template('manage_package.html', user_packages=user_packages)
 
+# بروزرسانی اطلاعات یک پکیج ثبت شده توسطط کاربر
 @package_Blueprint.route('/managepackage/edit/<string:package_hash_url>', methods = ['POST','GET'])
 @login_required
 def edit_package(package_hash_url):
@@ -106,4 +109,3 @@ def edit_package(package_hash_url):
     form.c_version.data = package.current_version
     form.f_version.data = package.force_version
     return render_template('package.html' ,form=form)
-   

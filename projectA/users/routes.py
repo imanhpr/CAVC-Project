@@ -4,10 +4,10 @@ from projectA import db , bcrypt
 from projectA.forms import Register_form, Login_form
 from projectA.models import User
 
-
+# ثبت بلوپرینت جدید مربوط به کاربران
 users = Blueprint('users', __name__)
 
-
+# تابع مربوط ثبت نام کاربر مربوط به صفحه ثبت نام
 @users.route('/register', methods=['POST', 'GET'])
 def register_view():
     if current_user.is_authenticated:
@@ -26,7 +26,7 @@ def register_view():
 
     return render_template('register.html', form=form,log_reg_title='Create An Account')
 
-
+# تابع مربوط به ورود کاربر به وب سایت و صفحه مربوط به لاگین
 @users.route('/login', methods=['POST', 'GET'])
 def login_view():
     if current_user.is_authenticated:
@@ -40,7 +40,7 @@ def login_view():
 
     return render_template('login.html', form=form , log_reg_title='Login To Your Account')
 
-
+# تایع مربوط به خروج کاربر از سایت
 @users.route('/logout')
 @login_required
 def logout_view():
