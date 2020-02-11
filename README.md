@@ -8,10 +8,7 @@ This Project Created By Iman Hossini Pour For Shamsipour Technical College with 
 
 ### About Project :
 This Project Created By Iman Hossini Pour For Shamsipour Technical College with MIT License.
-
->>>>>>> 5fd9dbdd505d59f76a8d8b2aab18c92c59de1ba5
 Student Number is : 95210033154004
-
 
 ### License
 ```
