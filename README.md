@@ -1,7 +1,15 @@
 # CAVC-Project
 
+<<<<<<< HEAD
 ### About Project :
 This Project Created By Iman Hossini Pour For Shamsipour Technical College with MIT License
+=======
+![ShamsipourLogo](https://upload.wikimedia.org/wikipedia/commons/4/40/STVC.svg)
+
+### About Project :
+This Project Created By Iman Hossini Pour For Shamsipour Technical College with MIT License.
+
+>>>>>>> 5fd9dbdd505d59f76a8d8b2aab18c92c59de1ba5
 Student Number is : 95210033154004
 
 
